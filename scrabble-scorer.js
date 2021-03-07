@@ -43,7 +43,7 @@ function initialPrompt() {
 };
 
 function validateInput(word) {
-  word = word.toUpperCase();
+  word = word.toLowerCase();
   let charLength = 0;
   for (i=0; i < word.length; i++){
     for (item in newPointStructure){
@@ -59,7 +59,7 @@ function validateInput(word) {
 }
 
 function simpleScore(word){
-  word = word.toUpperCase();
+  word = word.toLowerCase();
   let wordScore = word.length;
   for (i=0; i < word.length; i++){
     if (word[i] == ' '){
@@ -70,10 +70,10 @@ function simpleScore(word){
 };
 
 function vowelBonusScore(word){
-  word = word.toUpperCase();
+  word = word.toLowerCase();
   let wordScore = 0;
   for (i = 0; i < word.length; i++) {
-    if (word[i] === 'A' || word[i] === 'E' || word[i] === 'I' || word[i] === 'O' || word[i] === 'U') {
+    if (word[i] === 'a' || word[i] === 'e' || word[i] === 'i' || word[i] === 'o' || word[i] === 'u') {
       wordScore = wordScore + 3;
     } else if (word[i] === ' '){
       wordScore = wordScore + 0;
@@ -84,7 +84,7 @@ function vowelBonusScore(word){
 };
 
 function scrabbleScore(word){
-  word = word.toUpperCase();
+  word = word.toLowerCase();
   let letterPoints = 0;
   for (i=0; i < word.length; i++){
     for (item in newPointStructure){
@@ -127,10 +127,13 @@ function scorerPrompt(arr) {
 function transform(object) {
   let newObject = {};
   let value = null;
+  let key = null;
   for (item in object){
     value = item;
     for (i=0; i < object[item].length; i++){
-      newObject[object[item][i]] = Number(value);
+      key = object[item][i];
+      key = key.toLowerCase();
+      newObject[key] = Number(value);
     } 
   } newObject[' '] = 0; 
   return newObject;
