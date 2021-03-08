@@ -135,7 +135,7 @@ function transform(object) {
       key = key.toLowerCase();
       newObject[key] = Number(value);
     } 
-  } newObject[' '] = 0; 
+  } //newObject[' '] = 0; 
   return newObject;
 };
 
