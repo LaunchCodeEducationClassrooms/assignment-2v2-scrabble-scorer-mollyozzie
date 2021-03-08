@@ -97,21 +97,21 @@ function scrabbleScore(word){
 };
 
 let simple = {
-  'name': 'Simple Score',
-  'description': 'Each letter is worth 1 point.',
-  'scorerFunction': 'simpleScore' 
+  name: 'Simple Score',
+  description: 'Each letter is worth 1 point.',
+  scorerFunction: 'simpleScore' 
 };
 
 let bonus = {
-  'name': 'Bonus Vowels',
-  'description': 'Vowels are 3 points, consonants are 1 point.',
-  'scorerFunction': 'vowelBonusScore' 
+  name: 'Bonus Vowels',
+  description: 'Vowels are 3 points, consonants are 1 point.',
+  scorerFunction: 'vowelBonusScore' 
 };
 
 let scrabble = {
-  'name': 'Scrabble',
-  'description': 'The traditional scoring algorithm.',
-  'scorerFunction': 'scrabbleScore'
+  name: 'Scrabble',
+  description: 'The traditional scoring algorithm.',
+  scorerFunction: 'scrabbleScore'
 };
 
 const scoringAlgorithms = [simple, bonus, scrabble];
